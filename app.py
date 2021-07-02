@@ -350,7 +350,10 @@ subplot_header = lambda text: html.Div(html.H4(text), className="col-lg-12 col-m
 markdown = lambda text: dcc.Markdown(text, style={'textAlign': 'center', 'padding': '10px'})
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)  # Init dashboard app
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, meta_tags=[
+            {
+                'name': 'viewport',
+                'content': 'width=device-width, initial-scale=1.0'}])  # Init dashboard app
 
 app.layout = html.Div([
     header('Resumen reportes de servicios municipales Zapopan'),
@@ -502,4 +505,4 @@ app.layout = html.Div([
 
 ], style={'overflow-y':'100%'})
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', debug=False, port=5002)
