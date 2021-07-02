@@ -22,6 +22,7 @@ from colors import estatus_colors
 from colors import colors
 
 url = "http://127.0.0.1:5000"
+url = "http://miros.geovirtual.mx:5000"
 
 months = {    
     1: "ENERO",
